@@ -6,5 +6,20 @@
   "repository": "git@github.com:alberto-esposito/pwamp-js.git",
   "author": "alberto-esposito",
   "license": "BSD",
-  "private": false
+  "private": false,
+  "scripts": {
+    "build": "node --experimental-modules build.mjs",
+    "compile": "google-closure-compiler-js --compilationLevel=ADVANCED --languageIn=ECMASCRIPT_2017 --languageOut=ECMASCRIPT_2017 dist/bundle.mjs > dist/min.mjs "
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "butternut": "^0.4.6",
+    "google-closure-compiler-js": "^20180610.0.0",
+    "rollup": "0.62.0",
+    "rollup-plugin-babel": "3.0.7",
+    "uglify-es": "^3.3.9",
+    "uglify-js": "^3.4.4"
+  }
 }
