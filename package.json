@@ -1,6 +1,6 @@
 {
   "name": "pwamp",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A modern framework to build high performance PWAMPs",
   "main": "src/index.js",
   "repository": "git@github.com:alberto-esposito/pwamp.git",
