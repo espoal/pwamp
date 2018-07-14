@@ -1,9 +1,12 @@
 {
   "name": "pwamp",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A modern framework to build high performance PWAMPs",
   "main": "src/index.js",
-  "repository": "git@github.com:alberto-esposito/pwamp.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alberto-esposito/pwamp.git"
+  },
   "author": "alberto-esposito",
   "license": "BSD",
   "private": false,
