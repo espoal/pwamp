@@ -1,8 +1,8 @@
 {
   "name": "pwamp",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "A modern framework to build high performance PWAMPs",
-  "main": "dist/bundle.mjs",
+  "main": "dist/bundle",
   "repository": {
     "type": "git",
     "url": "https://github.com/alberto-esposito/pwamp.git"
