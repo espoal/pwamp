@@ -84,5 +84,5 @@ async function build({inputOpts, outOpts, source=false}) {
 
 }
 
-build({inputOpts: esInputOptions, outOpts: esModuleOut})
+build({inputOpts: esInputOptions, outOpts: esModuleOut, source: true})
 build({inputOpts: esInputOptions, outOpts: umdOut})
