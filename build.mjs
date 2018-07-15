@@ -5,13 +5,25 @@ import fs from 'fs'
 import UglifyJS from 'uglify-es'
 import butternut from 'butternut'
 
-const inputOptions = {
+const esInputOptions = {
   input: 'src/index.js',
   plugins: [
     babel({
       babelrc: false,
       presets: [],
       plugins: ["transform-class-properties"],
+      exclude: 'node_modules/**'
+    })
+  ]
+}
+
+const UMDInputOptions = {
+  input: 'src/index.js',
+  plugins: [
+    babel({
+      babelrc: false,
+      presets: [],
+      plugins: ["transform-class-properties", "plugin-transform-modules-commonjs"],
       exclude: 'node_modules/**'
     })
   ]
@@ -43,16 +55,16 @@ const esModuleOut = {
 
 
 
-async function build(outOpts) {
+async function build({inputOpts, outOpts, source=false}) {
   // create a bundle
-  const bundle = await rollup.rollup(inputOptions)
+  const bundle = await rollup.rollup(inputOpts)
 
 
   // generate code and a sourcemap
-  const { code } = await bundle.generate(esModuleOut)
 
+  const { code } = await bundle.generate(outOpts)
 
-  fs.writeFileSync(outOpts.file, code)
+  if (source) fs.writeFileSync(outOpts.file, code)
 
   // outOpts.closure.jsCode = code
 
@@ -72,5 +84,5 @@ async function build(outOpts) {
 
 }
 
-build(esModuleOut)
-build(umdOut)
+build({inputOpts: esInputOptions, outOpts: esModuleOut})
+build({inputOpts: esInputOptions, outOpts: umdOut})
