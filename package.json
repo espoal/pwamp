@@ -2,7 +2,7 @@
   "name": "pwamp",
   "version": "0.0.7",
   "description": "A modern framework to build high performance PWAMPs",
-  "main": "src/index.js",
+  "main": "dist/build.mjs",
   "repository": {
     "type": "git",
     "url": "https://github.com/alberto-esposito/pwamp.git"
