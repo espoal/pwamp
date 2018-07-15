@@ -1,6 +1,6 @@
 {
   "name": "pwamp",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A modern framework to build high performance PWAMPs",
   "main": "dist/bundle.mjs",
   "repository": {
