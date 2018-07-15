@@ -29,7 +29,7 @@ const umdOut = {
   format: 'umd',
   file: 'dist/source.js',
   name: 'pwamp',
-  compressedName: 'dist/bundle.mjs',
+  compressedName: 'dist/bundle.js',
 
 }
 
@@ -59,18 +59,18 @@ async function build(outOpts) {
   // const minified = closure.compile(outOpts.closure)
 
   const uglified = UglifyJS.minify(code)
-  const butter = butternut.squash(code)
+  // const butter = butternut.squash(code)
 
 
   // fs.writeFileSync(outOpts.file +'.clo.js', minified.compiledCode)
 
   fs.writeFileSync(outOpts.compressedName, uglified.code)
 
-  fs.writeFileSync(outOpts.compressedName +'.butt.js', butter.code)
+  // fs.writeFileSync(outOpts.compressedName +'.butt.js', butter.code)
 
 
 
 }
 
 build(esModuleOut)
-// build(umdOut)
+build(umdOut)
